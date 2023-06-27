@@ -1,0 +1,67 @@
+Part 60:
+------------------------------------- - - -
+Reactive Forms
+    Form
+        Elements
+            Input
+            Textarea
+            buttons
+            checkbox
+            radio
+            Select
+            Image
+
+    FormGroup
+        Each element is a FormControl
+        when one or more formcontrol are grouped together - we call it  formgroup
+
+    Form
+        FormControlName
+
+Part 61 :
+--------------------------------------------------------- - -
+    FormBuilder
+        - Its an abstraction layer which makes it easy to design and build our forms
+        - FormBuilder to work when complex form structure
+            Add / Remove
+            Add / Remove
+            Array of form controls
+
+        - FormBuilder has 3 important 
+            FormGroup
+            FormArray
+            FormControl
+
+        - FormBuilder is the prefered one
+        - FormBuilder -> break down your form into smaller pieces of code
+                        which is reusable / simple to maintain
+
+
+Part 62 :
+------------------------------------------------------- - - 
+
+    Way 1:  
+    Direct way of setting the form value at form creation.
+
+    Way 2: 
+        Use setValue
+        the another way of setting values of form
+        Note: The setValue requires data/values for all the “fields/keys”, if you 
+        don’t pass value you will see error.
+
+    Way 3: 
+        Use PatchValue 
+        -> you don't have to pass all key / values
+        -> only selected keys / fields data can be set
+        The only difference is -> you do not have to pass all "keys/fields"
+
+Part 63:
+------------------------------------------------ - - -
+   - Get Entire Form in one go
+        - this.addLoanTypesForm.value
+   - Get a specific form control
+        - this.addLoanTypesForm.get('loanType').value 
+
+    - Whenever you do valueChanges
+        -> we have to do a subscribe
+

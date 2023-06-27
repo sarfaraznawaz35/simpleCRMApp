@@ -1,0 +1,37 @@
+Part 72:
+-----------------------
+1. Services ->
+    - Service are reusable common shared functionality between different modules and component
+
+    - Services are injected using the DI mechanism
+    - Services are used for interactions with backend APIs or rest endpoints
+    - Services are the one of the most critical crucial
+        -> backend APIs
+
+2. Ho do we generate the services
+    -> ng g service <service_name>
+
+3. Where should you keep the services?
+    -> create a single folder to place all services
+
+4. Whats inside a service file?
+    -> @Injectable (it is a decorator, it gives information about this particular file )
+        -> Dependency Injection mechanism
+            it will use Dependency Injection mechanism and will be injected at run time that means 
+            when you are running your application compiling it, it would directly provide it so that'why
+            it is @Injectable
+    -> ProvidedIn
+        -> It's available whereever we inject it
+
+5. Where can we inject the services?
+    -> Inject in any component where we want to use it
+
+6. Do we need to import this services in any Module file?
+    - No
+    - only imported in component where its used
+
+7. Imported the service into the component
+8. Create an instance in the constructor
+9. Call the method using the instance of the service.
+
+            

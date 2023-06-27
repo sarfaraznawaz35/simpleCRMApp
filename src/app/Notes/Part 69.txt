@@ -1,0 +1,65 @@
+Part 69
+--------------------------------------- - - 
+Form
+    the forms pretty static
+        We defined the formControl in our component/FormBuilder
+            Template
+    
+    Dynamically adding FormControls to our form
+
+    FormArray
+        - FormControl
+        - FormGroup
+        - FormArray
+        - we can have combination of above abstracts
+        - FormArray
+            - FormControl
+            - FormArray
+
+        -FormArray
+            - FormControls
+            - FormGroup
+            - FormGroup
+            - FormControl
+
+Form
+    Add Address ->
+    Multiple Address
+        Multiple Addresses
+            Address 1
+            Address 2
+            State
+            City
+            Zipcode
+
+    Add Multiple Files
+        Gmail
+            multiple files to an email
+                New File
+            
+    Facebook
+        Websites
+
+    Resume Builder
+        Multiple colleges
+            College Name
+            Degree
+            Percentage
+
+    Invoice Builder
+        Products
+            Product Name
+            price
+            tax
+            finalAmount 
+
+Part 70
+------------------------------------
+FormArrays
+
+    - We can add any number of elements
+        - just like a normal array
+    - We can also remove elements from the FormArray
+
+    - Final thing about FormArray
+        -> when we submit the form what happens?

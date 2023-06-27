@@ -1,0 +1,55 @@
+<p>{{user | json}}</p>
+
+<div class="px-5 mt-2 p-2 ">
+    <h2>Loan Application Form</h2>
+    <form [formGroup]="addLoanTypesForm">
+        <div class="col-md-8 py-2 mt-2 pe-2 row">
+            <div class="col-md-2">
+                <label class="form-label text-dark" for="flexCheckChecked"> Loan Name </label>
+            </div>
+            <div class="col-md-6">
+                <input type="text" formControlName="loanName" class="form-control" >
+                <span class="text-danger" *ngIf="addLoanTypesForm.get('loanName').hasError('required') && addLoanTypesForm.get('loanName').touched ">Loan name is equired</span>
+                <span class="text-danger" *ngIf="addLoanTypesForm.get('loanName').hasError('minlength') && addLoanTypesForm.get('loanName').touched ">Loan name should be minimum of 10 chars</span>
+                <span class="text-danger" *ngIf="addLoanTypesForm.get('loanName').hasError('maxlength') && addLoanTypesForm.get('loanName').touched ">Loan name should have maximum 20 characters</span>
+            </div>
+        </div>
+        <div class="col-md-8 py-2 mt-2 pe-2 row">
+            <div class="col-md-2">
+                <label class="form-label text-dark" for="flexCheckChecked"> Loan Type </label>
+            </div>
+            <div class="col-md-6">
+                <input type="text" formControlName="loanType" class="form-control">
+            </div>
+        </div>
+        <div class="col-md-5 p-2 mt-2">
+            <label class="form-label text-dark" for="flexCheckChecked" > Loan Description </label>
+            <textarea class="form-control" cols="10" rows="3" formControlName="loanDescription"></textarea>
+        </div>
+<!-- 
+        <div class="col-md-6 p-2 mt-2 form-group" formArrayName="users" >
+            <label>Users</label>
+            <div *ngFor="let control of addLoanTypesForm.controls['users']['controls']; let i = index">
+                <input type="text" [formControlName]="i">
+
+            </div>
+        </div> -->
+
+        <div class="col-md-6 p-2 mt-2 form-group" formArrayName="users" >
+            <label>Users</label>
+            <div *ngFor="let control of addLoanTypesForm.controls['users']['controls']; let i=index;" [formGroupName]="i"> 
+                <input type="text" formControlName="name">
+                <input type="text" formControlName="age" (blur)="assignDept(i)">
+                <input type="text" formControlName="dept">
+                <button (click)="removeUser(i)" >Remove</button>
+
+            </div>
+        </div>
+
+        <button (click)="addLoanType()" [disabled]="!addLoanTypesForm.valid" class="mt-2"> Add Loan Type </button>
+        <button (click)="resetForm()" >Reset Form</button>
+        <button (click)="addUser()">Add New User</button>
+    
+    </form>
+</div>
+
